@@ -281,8 +281,6 @@ SolverResult GodelSATSolver::solve(int witnessDepthLimit) {
     for (auto cl: new_clauses) {
         S->clauses.push_back(cl);
     }
-    std::cout << "original-------------------";
-    std::cout << S->returnStr() << std::endl;
 
     S->renameVariables();
     removeImpossible();
@@ -306,7 +304,7 @@ SolverResult GodelSATSolver::solve(int witnessDepthLimit) {
 //        std::cout << accResS;
 //        std::cout << "s:";
 //        std::cout << S->clauses.size();
-        std::cout << std::endl;
+//        std::cout << std::endl;
         auto resolvents = hyperresolve();
         int countOfActuallyAdded = 0;
         for (std::shared_ptr<Clause> cl: resolvents) {
